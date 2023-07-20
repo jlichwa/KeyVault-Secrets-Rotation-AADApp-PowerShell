@@ -196,7 +196,7 @@
                         {
                             "type": "Microsoft.Authorization/roleAssignments",
                             "apiVersion": "2022-04-01",
-                            "name": "[guid(concat('keyvault-',variables('keyVaultName'), uniqueString(resourceGroup().id)))]",
+                            "name": "[guid(parameters('functionAppName'))]",
                             "scope": "[concat('Microsoft.KeyVault/vaults', '/', variables('keyVaultName'))]",
                             "properties": {
                                 "roleDefinitionId": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/', 'b86a8fe4-44ce-4948-aee5-eccb2c155cd7')]",
